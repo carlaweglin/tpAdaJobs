@@ -33,7 +33,10 @@
       </nav>
     </header>
     <main>
-      <div class="container is-flex is-justify-content-space-evenly pt-5 is-flex-wrap-wrap" style="max-width: 900px;">
+      <section
+        class="container is-flex is-justify-content-space-evenly pt-5 is-flex-wrap-wrap is-hidden"
+        style="max-width: 900px"
+      >
         <div class="select is-medium">
           <select>
             <option>Location</option>
@@ -49,11 +52,42 @@
             <option>Category</option>
           </select>
         </div>
-        
-          <button class="button is-info is-medium">Search</button>
-          <button class="button is-success is-medium">Clear</button>
-        
-      </div>
+
+        <button class="button is-info is-medium">Search</button>
+        <button class="button is-success is-medium">Clear</button>
+      </section>
+      <section class="container">
+        <form class="box p-6 mt-6">
+          <div class="field">
+            <label class="label">Job Title</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Job Title" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Description"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Tags</label>
+            <div class="control">
+              <input class="input m-2" type="text" placeholder="Location" />
+              <input class="input m-2" type="text" placeholder="Seniority" />
+              <input class="input m-2" type="text" placeholder="Category" />
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-info"> Submit </a>
+            </p>
+            <p class="control">
+              <a class="button is-light"> Cancel </a>
+            </p>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
