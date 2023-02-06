@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>TP Jobs</title>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar has-background-info"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <h1 class="title has-text-light">Carrers</h1>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item has-text-grey-lighter"> Home </a>
+
+            <a class="navbar-item has-text-grey-lighter"> Create Job </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section
+        class="container is-flex is-justify-content-space-evenly pt-5 is-flex-wrap-wrap is-hidden"
+        style="max-width: 900px"
+      >
+        <div class="select is-medium">
+          <select>
+            <option>Location</option>
+          </select>
+        </div>
+        <div class="select is-medium">
+          <select>
+            <option>Seniority</option>
+          </select>
+        </div>
+        <div class="select is-medium">
+          <select>
+            <option>Category</option>
+          </select>
+        </div>
+
+        <button class="button is-info is-medium">Search</button>
+        <button class="button is-success is-medium">Clear</button>
+      </section>
+      <section class="container">
+        <form class="box p-6 mt-6">
+          <div class="field">
+            <label class="label">Job Title</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Job Title" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Description"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Tags</label>
+            <div class="control">
+              <input class="input m-2" type="text" placeholder="Location" />
+              <input class="input m-2" type="text" placeholder="Seniority" />
+              <input class="input m-2" type="text" placeholder="Category" />
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-info"> Submit </a>
+            </p>
+            <p class="control">
+              <a class="button is-light"> Cancel </a>
+            </p>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>
