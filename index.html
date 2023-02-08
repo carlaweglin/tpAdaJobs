@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <title>TP Jobs</title>
-  </head>
-  <body>
-    <header>
-      <nav
-        class="navbar has-background-info"
-        role="navigation"
-        aria-label="main navigation"
-      >
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <h1 class="title has-text-light">Carrers</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <title>TP Jobs</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar has-background-info" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <h1 class="title has-text-light">Carrers</h1>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="index.html" class="navbar-item has-text-grey-lighter">
+            Home
+          </a>
+
+          <a id="createJob" class="navbar-item has-text-grey-lighter">
+            Create Job
           </a>
         </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!----------------------VISTA PRINCIPAL----------------------------->
+    <section id="homeView" class="container is-flex is-justify-content-space-evenly pt-5 is-flex-wrap-wrap"
+      style="max-width: 900px">
+      <div class="select is-medium">
+        <select>
+          <option>Location</option>
+        </select>
+      </div>
+      <div class="select is-medium">
+        <select>
+          <option>Seniority</option>
+        </select>
+      </div>
+      <div class="select is-medium">
+        <select>
+          <option>Category</option>
+        </select>
+      </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item has-text-grey-lighter"> Home </a>
+      <button class="button is-info is-medium">Search</button>
+      <button class="button is-success is-medium">Clear</button>
 
-            <a id="createJob" class="navbar-item has-text-grey-lighter"> Create Job </a>
+      <!--prueba card-->
+      <div id="jobsContainer" class="container columns mt-6 is-flex-wrap-wrap is-justify-content-center">
+      </div>
+
+      </div>
+    </section>
+
+    <!-----------------------VISTA CREANDO ------------------->
+    <section id="createJobView" class="container is-hidden">
+      <form class="box p-6 mt-6">
+        <div class="field">
+          <label class="label">Job Title</label>
+          <div class="control">
+            <input id="inputJobTitle" class="input" type="text" placeholder="Job Title" />
           </div>
         </div>
-      </nav>
-    </header>
-    <main>
-
-    <!----------------------VISTA PRINCIPAL----------------------------->    
-      <section id="homeView"
-        class="container is-flex is-justify-content-space-evenly pt-5 is-flex-wrap-wrap"
-        style="max-width: 900px"
-      >
-        <div class="select is-medium">
-          <select>
-            <option>Location</option>
-          </select>
+        <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <textarea id="inputJobDescription" class="textarea" placeholder="Description"></textarea>
+          </div>
         </div>
-        <div class="select is-medium">
-          <select>
-            <option>Seniority</option>
-          </select>
+        <div class="field">
+          <label class="label">Tags</label>
+          <div class="control">
+            <input id="inputLocation" class="input m-2" type="text" placeholder="Location" />
+            <input id="inputSeniority" class="input m-2" type="text" placeholder="Seniority" />
+            <input id="inputCategory" class="input m-2" type="text" placeholder="Category" />
+          </div>
         </div>
-        <div class="select is-medium">
-          <select>
-            <option>Category</option>
-          </select>
+        <div class="field is-grouped">
+          <button id="btnSaveJob" class="button is-info m-2">Save</button>
+
+          <button class="button is-light m-2">Cancel</button>
         </div>
+      </form>
+    </section>
+  </main>
+  <script src="dom.js"></script>
+  <script src="post.js"></script>
+  <script src="get.js"></script>
+</body>
 
-        <button class="button is-info is-medium">Search</button>
-        <button class="button is-success is-medium">Clear</button>
-      </section>
-
-    <!-----------------------VISTA CREANDO ------------------->  
-      <section id="createJobView" class="container is-hidden">
-        <form class="box p-6 mt-6">
-          <div class="field">
-            <label class="label">Job Title</label>
-            <div class="control">
-              <input id="inputJobTitle" class="input" type="text" placeholder="Job Title" />
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Description</label>
-            <div class="control">
-              <textarea id="inputJobDescription" class="textarea" placeholder="Description"></textarea>
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Tags</label>
-            <div class="control">
-              <input id="inputLocation" class="input m-2" type="text" placeholder="Location" />
-              <input id="inputSeniority" class="input m-2" type="text" placeholder="Seniority" />
-              <input id="inputCategory" class="input m-2" type="text" placeholder="Category" />
-            </div>
-          </div>
-          <div class="field is-grouped">
-            
-              <button id="btnSaveJob" class="button is-info m-2"> Save </button>
-            
-              <button class="button is-light m-2"> Cancel </button>
-            
-          </div>
-        </form>
-      </section>
-    </main>
-   <script src="dom.js"></script>
-   <script src="post.js"></script> 
-  </body>
 </html>

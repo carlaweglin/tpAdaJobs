@@ -1,3 +1,5 @@
+// crea job ingresado en formulario y hace post en api//
+
 const createJob = async () => {
     const job = dataForm();
 
@@ -5,7 +7,7 @@ const createJob = async () => {
         {
             method: "POST",
             headers: {
-                "Content-Type": "application/jason"
+                "Content-Type": "Application/json"
             },
             body: JSON.stringify(job)
         }
