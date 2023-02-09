@@ -1,8 +1,9 @@
 // crea job ingresado en formulario y hace post en api//
 
 const createJob = async () => {
+    
     const job = dataForm();
-
+    console.log("1");
     const response = await fetch(`${BASE_URL}/jobs`,
         {
             method: "POST",
@@ -12,11 +13,10 @@ const createJob = async () => {
             body: JSON.stringify(job)
         }
     );
-
     const data = await response.json();
 
-    console.log(data);
-
+    
+    
 }
 
 const dataForm = () => {
