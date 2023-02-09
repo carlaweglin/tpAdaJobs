@@ -54,7 +54,7 @@ const seeViewJob = (selectJob) => {
         <div class="card">
           <footer class="card-footer mt-3">
             <button class="card-footer-item button is-primary" onClick=''>Edit</button>
-            <button class="card-footer-item button is-danger" onClick=''>Delete</button>
+            <button class="card-footer-item button is-danger" onClick='deleteJob("${selectJob.id}")'>Delete</button>
           </footer>
         </div>
       </div>

@@ -28,10 +28,7 @@ const dataForm = () => {
         seniority: $inputSeniority.value
 
     }
-
-    
     return job
-    
 }
 
 
