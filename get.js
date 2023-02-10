@@ -4,8 +4,6 @@ const getJobs = async () => {
 const response = await fetch(`${BASE_URL}/jobs`);
 const data = await response.json();
 
-console.log("entro");
-console.log(data);
 renderJobs(data);
 }
 
@@ -19,4 +17,8 @@ const getJob = async (id) => {
     }
 
     
-
+const getJobToEdit = async (id) => {
+    const response = await fetch(`${BASE_URL}/jobs/${id}`);
+    const data = await response.json();
+    return data;
+}

@@ -37,17 +37,17 @@
       style="max-width: 900px">
       <div class="select is-medium">
         <select>
-          <option>Location</option>
+          <option>Select location</option>
         </select>
       </div>
       <div class="select is-medium">
         <select>
-          <option>Seniority</option>
+          <option>Select seniority</option>
         </select>
       </div>
       <div class="select is-medium">
         <select>
-          <option>Category</option>
+          <option>Select category</option>
         </select>
       </div>
 
@@ -63,7 +63,7 @@
 
     <!-----------------------VISTA CREANDO ------------------->
     <section id="createJobView" class="container is-hidden">
-      <form class="box p-6 mt-6">
+      <form id="formCreateJob" class="box p-6 mt-6">
         <div class="field">
           <label class="label">Job Title</label>
           <div class="control">
@@ -87,12 +87,44 @@
         <div class="field is-grouped">
           <button id="btnSaveJob" class="button is-info m-2">Save</button>
 
-          <button class="button is-light m-2">Cancel</button>
+          <button id="btnCancelCreateJob" class="button is-light m-2">Cancel</button>
         </div>
       </form>
     </section>
+    <!----------------------------VISTA JOB SELECCIONADO--------------->
     <section id="viewSelectJob" class="container is-hidden mt-6">
     </section>
+    <!----------------------------VISTA EDITANDO JOB------------------->
+    <section id="editJobView" class="container is-hidden">
+      <form id="formEditJob" class="box p-6 mt-6 is-hidden ">
+        <div class="field">
+          <label class="label">Job Title</label>
+          <div class="control">
+            <input id="inputEditJobTitle" class="input" type="text" placeholder="Job Title" />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <textarea id="inputEditJobDescription" class="textarea" placeholder="Description"></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Tags</label>
+          <div class="control">
+            <input id="inputEditLocation" class="input m-2" type="text" placeholder="Location" />
+            <input id="inputEditSeniority" class="input m-2" type="text" placeholder="Seniority" />
+            <input id="inputEditCategory" class="input m-2" type="text" placeholder="Category" />
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <button id="btnSaveEditJob" class="button is-info m-2">Edit</button>
+
+          <button id="btnCancelEditJob" class="button is-light m-2">Cancel</button>
+        </div>
+      </form>
+    </section>
+
   </main>
   <script src="dom.js"></script>
   <script src="post.js"></script>

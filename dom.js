@@ -4,7 +4,6 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
 const renderJobs = (jobs) => {
-    console.log("jobs:",jobs);
     $jobsContainer.innerHTML = ''
     for (const {name,description,location,category,seniority,id} of jobs) {
         $jobsContainer.innerHTML += `
@@ -53,13 +52,12 @@ const seeViewJob = (selectJob) => {
         <span class="tag is-link is-normal">${selectJob.seniority}</span>
         <div class="card">
           <footer class="card-footer mt-3">
-            <button class="card-footer-item button is-primary" onClick=''>Edit</button>
+            <button class="card-footer-item button is-primary" onClick='editSelectJob("${selectJob.id}")'>Edit</button>
             <button class="card-footer-item button is-danger" onClick='deleteJob("${selectJob.id}")'>Delete</button>
           </footer>
         </div>
       </div>
     </div>`
-    console.log(selectJob);
 }
 
 
@@ -76,8 +74,13 @@ const $inputLocation = $('#inputLocation ');
 const $inputSeniority = $('#inputCategory');
 const $inputCategory = $('#inputCategory');
 const $jobsContainer = $('#jobsContainer');
-let $viewSelectJob = $('#viewSelectJob');
-const $prueba = $('#prueba')
+const $viewSelectJob = $('#viewSelectJob');
+const $editJobView = $('#editJobView');
+const $btnSaveEditJob = $('#btnSaveEditJob');
+const $btnEditJob = $('#btnEditJob');
+const $formEditJob = $ ('#formEditJob')
+
+
 
 
 
@@ -89,6 +92,7 @@ $createJob.addEventListener('click', () => {
     $homeView.classList.add('is-hidden')
     $viewSelectJob.classList.add('is-hidden')
     $createJobView.classList.remove('is-hidden')
+    $('#formCreateJob').reset();
 })
 
 $btnSaveJob.addEventListener('click', (event) => {
@@ -99,3 +103,19 @@ $btnSaveJob.addEventListener('click', (event) => {
     $createJobView.classList.add('is-hidden')
    
 })
+
+$('#btnCancelCreateJob').addEventListener('click', (event) => {
+    event.preventDefault();
+    $homeView.classList.remove('is-hidden')
+    $viewSelectJob.classList.remove('is-hidden')
+    $createJobView.classList.add('is-hidden')
+})
+
+$('#btnCancelEditJob').addEventListener('click', (event) => {
+    event.preventDefault()
+    $viewSelectJob.classList.remove('is-hidden');
+    $editJobView.classList.add('is-hidden');
+    $formEditJob.classList.add('is-hidden');
+})
+
+
