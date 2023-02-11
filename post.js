@@ -3,7 +3,6 @@
 const createJob = async () => {
 
     const job = dataForm();
-    console.log("1");
     const response = await fetch(`${BASE_URL}/jobs`,
         {
             method: "POST",
@@ -45,6 +44,10 @@ const editSelectJob = async (id) => {
     $('#inputEditLocation').value = location;
     $('#inputEditSeniority').value = seniority;
     $('#inputEditCategory').value = category;
+
+    $btnSaveEditJob.setAttribute("data-id", id)
 }
+
+
 
 

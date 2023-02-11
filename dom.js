@@ -118,4 +118,6 @@ $('#btnCancelEditJob').addEventListener('click', (event) => {
     $formEditJob.classList.add('is-hidden');
 })
 
-
+$btnSaveEditJob.addEventListener('click', (e) => {
+    upDateJob(e.target.getAttribute('data-id'))
+})
